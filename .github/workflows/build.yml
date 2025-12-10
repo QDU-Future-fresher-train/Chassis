@@ -53,6 +53,12 @@ jobs:
       - name: Pull libxr to ./libxr
         run: git clone --depth=1 https://github.com/Jiu-xiao/libxr ./libxr
 
+      - name: Checkout TTMotor module
+        uses: actions/checkout@v4
+        with:
+          repository: QDU-Future-fresher-train/TTMotor
+          path: bsp-dev-c/Modules/TTMotor
+
       - name: Setup Python & Install deps
         run: |
           python3 -m pip install --upgrade pip
@@ -76,7 +82,7 @@ jobs:
 
       - name: Add BlinkLED module
         run: |
-          xrobot_add_mod BlinkLED --instance-id BlinkLED_0
+          xrobot_add_mod TTMotor --instance-id motor
 
       - name: Add this repo module
         run: |
