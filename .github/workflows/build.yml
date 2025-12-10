@@ -57,7 +57,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: QDU-Future-fresher-train/TTMotor
-          path: bsp-dev-c/Modules/TTMotor
+          path: Modules/TTMotor
 
       - name: Setup Python & Install deps
         run: |
